@@ -1,0 +1,9 @@
+build/
+.vs/
+.vscode/
+out/
+cmake-build-*/
+*.user
+*.VC.db
+*.VC.opendb
+*.sln
