@@ -14,6 +14,9 @@ class SoundEffect
 
     virtual bool isActive() const = 0;
 
+    void stop() { active = false; }
+
   protected:
     double sampleRate = 44100.0;
+    bool   active     = false;
 };

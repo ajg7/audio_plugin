@@ -39,16 +39,16 @@ target_sources(AudioPlugin
         Source/PluginEditor.cpp
         Source/PluginEditor.h
         Source/SoundEffect.h
-        Source/ExplosionEffect.cpp
-        Source/ExplosionEffect.h
-        Source/LaserEffect.cpp
-        Source/LaserEffect.h
-        Source/WaterWaveEffect.cpp
-        Source/WaterWaveEffect.h
-        Source/MagicEffect.cpp
-        Source/MagicEffect.h
-        Source/SurpriseEffect.cpp
-        Source/SurpriseEffect.h
+        Source/Effects/ExplosionEffect.cpp
+        Source/Effects/ExplosionEffect.h
+        Source/Effects/LaserEffect.cpp
+        Source/Effects/LaserEffect.h
+        Source/Effects/WaterWaveEffect.cpp
+        Source/Effects/WaterWaveEffect.h
+        Source/Effects/MagicEffect.cpp
+        Source/Effects/MagicEffect.h
+        Source/Effects/SurpriseEffect.cpp
+        Source/Effects/SurpriseEffect.h
 )
 
 target_compile_definitions(AudioPlugin

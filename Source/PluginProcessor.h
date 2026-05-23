@@ -1,25 +1,25 @@
 #pragma once
 
 #include <juce_audio_processors/juce_audio_processors.h>
+#include "SoundEffect.h"
+#include <array>
+#include <memory>
 
-class AudioPluginAudioProcessor : public juce::AudioProcessor
+class PluginProcessor : public juce::AudioProcessor
 {
 public:
-    AudioPluginAudioProcessor();
-    ~AudioPluginAudioProcessor() override;
+    PluginProcessor();
+    ~PluginProcessor() override;
 
     void prepareToPlay (double sampleRate, int samplesPerBlock) override;
     void releaseResources() override;
-
     bool isBusesLayoutSupported (const BusesLayout& layouts) const override;
-
     void processBlock (juce::AudioBuffer<float>&, juce::MidiBuffer&) override;
 
     juce::AudioProcessorEditor* createEditor() override;
     bool hasEditor() const override;
 
     const juce::String getName() const override;
-
     bool acceptsMidi() const override;
     bool producesMidi() const override;
     bool isMidiEffect() const override;
@@ -34,6 +34,11 @@ public:
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
 
+    void triggerEffect (int index);
+    void stopAll();
+
 private:
-    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (AudioPluginAudioProcessor)
+    std::array<std::unique_ptr<SoundEffect>, 5> effects;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PluginProcessor)
 };

@@ -1,5 +1,5 @@
-#pragma once
-#include "SoundEffect.h"
+﻿#pragma once
+#include "../SoundEffect.h"
 
 class ExplosionEffect : public SoundEffect 
 {
@@ -11,7 +11,6 @@ class ExplosionEffect : public SoundEffect
   
     private:
       float amplitude = 0.0f;
-      bool active = false;
 
-      juce::Random random
+      juce::Random random;
 };
